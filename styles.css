@@ -22,25 +22,10 @@ header {
     animation: slideDown 0.8s ease-in-out;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-nav ul li:hover {
-    transform: scale(1.1);
-}
-
-nav ul li a {
+nav a {
     color: #0d47a1;
     text-decoration: none;
+    text-transform: capitalize;
     font-weight: bold;
 }
 
@@ -67,19 +52,20 @@ section {
     animation: fadeIn 1s ease-in-out;
 }
 
-.contact-form input, .contact-form textarea {
+form input, form textarea {
     padding: 10px;
     border: 1px solid #0d47a1;
     border-radius: 5px;
+    text-transform: capitalize;
     width: 100%;
     transition: border 0.3s ease-in-out;
 }
 
-.contact-form input:focus, .contact-form textarea:focus {
+form input:focus, form textarea:focus {
     border-color: #1565c0;
 }
 
-.contact-form button {
+button {
     background: #0d47a1;
     color: #fff;
     padding: 10px;
@@ -89,12 +75,12 @@ section {
     transition: background 0.3s, transform 0.3s;
 }
 
-.contact-form button:hover {
+button:hover {
     background: #1565c0;
     transform: scale(1.05);
 }
 
-/* Animations */
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -110,7 +96,7 @@ section {
     to { transform: translateY(0); opacity: 1; }
 }
 
-/* Responsive Design */
+
 @media screen and (max-width: 768px) {
     nav ul {
         padding: 0;

@@ -1,21 +1,22 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Smooth scrolling only for internal links on the same page
-document.querySelectorAll('nav ul li a').forEach(anchor => {
-    const href = anchor.getAttribute('href');
+    // Smooth scrolling only for internal links on the same page (starting with #)
+    document.querySelectorAll('nav a').forEach(anchor => {
+        const href = anchor.getAttribute('href');
 
-    if (href.startsWith("#")) {
-        anchor.addEventListener('click', function(event) {
-            event.preventDefault();
-            const sectionId = href.substring(1);
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    }
-});
+        // Only apply smooth scrolling for sections inside the same page
+        if (href.startsWith("#")) {
+            anchor.addEventListener('click', function(event) {
+                event.preventDefault();
+                const sectionId = href.substring(1);
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
+    });
 
 
     // Highlight active section in navigation
