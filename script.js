@@ -32,19 +32,33 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Typing animation for About section
-    const aboutText = "I am a passionate web developer creating stunning web experiences.";
-    let index = 0;
-    function typeWriterEffect() {
-        if (index < aboutText.length) {
-            document.getElementById("about-text").innerHTML += aboutText.charAt(index);
-            index++;
-            setTimeout(typeWriterEffect, 50);
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("Typing script loaded!");
+    
+        const textElement = document.getElementById("about-text");
+        const text = "I am a passionate web developer creating stunning web experiences.";
+        let index = 0;
+    
+        function typeWriterEffect() {
+            console.log(`Typing: ${text.charAt(index)}`);
+    
+            if (index < text.length) {
+                textElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriterEffect, 50);
+            }
         }
-    }
-    if (document.getElementById("about-text")) {
-        typeWriterEffect();
-    }
+    
+        if (textElement) {
+            textElement.innerHTML = "";
+            typeWriterEffect();
+        } else {
+            console.log("❌ Error: #about-text not found!");
+        }
+    });
+    
+    
+    
 
     // Project fade-in animation on scroll
     const projects = document.querySelectorAll('.project');
